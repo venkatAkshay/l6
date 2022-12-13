@@ -8,7 +8,7 @@ app.use(express.static("public"));
 
 app.get("/", async (request, response) =>{
   //response.send("Hello World");
-  const allTodosAre = await Todo.getTodos();
+  const allTodosAre = await Todos.getTodos();
   if(request.accepts("html")){
     response.render("index", {
       allTodosAre,
