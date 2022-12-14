@@ -1,9 +1,11 @@
 {
   "name": "todo-manager",
   "version": "1.0.0",
+  "description":"",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js",
+    "start":"nodemon -e js,ejs",
+    "start-prod":"node index.js",
     "test":"echo \"Error: no test specified\" &&exit 1"
   },
   "lint-staged": {
@@ -29,6 +31,5 @@
     "prettier": "^2.7.1",
     "sequelize-cli": "^6.4.1",
     "supertest": "^6.2.4"
-  },
-  "description": ""
+  }
 }
