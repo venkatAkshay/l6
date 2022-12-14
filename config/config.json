@@ -15,7 +15,7 @@
   },
   "production": {
     "use_env_variable": "DATABASE_URL",
-    "dailect": "mysql",
+    "dailect": "postgres",
     "dialectOPtions": {
       "ssl":{
         "require": true,
