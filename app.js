@@ -18,7 +18,7 @@ app.get("/", async (request, response) =>{
   }
 });
 
-app.get("/todos", async function (request, response) {
+app.get("/todos", async function (_request, response) {
   console.log("Processing list of all Todos ...");
   // FILL IN YOUR CODE HERE
 
@@ -45,8 +45,7 @@ app.get("/todos/:id", async function (request, response) {
 app.post("/todos", async function (request, response) {
   try {
     const todo = await Todo.addTodo({
-    	title: request.body.title,
-	dueDate: request.body.dueDate,
+    	title: request.body
     });
     return response.json(todo);
   } catch (error) {
@@ -69,11 +68,7 @@ app.put("/todos/:id/markAsCompleted", async function (request, response) {
 app.delete("/todos/:id", async function (request, response) {
   console.log("We have to delete a Todo with ID: ", request.params.id);
   // FILL IN YOUR CODE HERE
-	const deleteTodo = await Todo.destroy({
-		where: {
-			id: request.params.id,
-		},
-	});
+	const deleteTodo = await Todo.destroy({where: {id: request.params.id,} });
 	response.send(deletedTodo ? true : false);
   
 });
