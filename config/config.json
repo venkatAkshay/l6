@@ -15,6 +15,12 @@
   },
   "production": {
     "use_env_variable": "DATABASE_URL",
-    "dailect": "postgres"
+    "dailect": "postgres",
+    "dialectOPtions": {
+      "ssl":{
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   }
 }
