@@ -4,12 +4,10 @@ const { Todo } = require("./models");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.set("view engine", "ejs");
-// app.use(express.static(path.join(__dirname + "/public")));
 app.use(express.static("public"));
 
 app.get("/", async (request, response)=>{
-  // response.send("Hello World");
-  const allTodosAre = await Todo.getTodos();
+  const allTodosAre = await Todo.getTodo();
   if (request.accepts("html")) {
     response.render("index", {
       allTodosAre,
