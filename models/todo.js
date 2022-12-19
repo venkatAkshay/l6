@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       return this.update({ completed: true });
     }
     static getTodo() {
-      return this.findAll({ order : [["id", "ASC"]] });
+      return this.findAll();
     }
   }
   Todo.init(
